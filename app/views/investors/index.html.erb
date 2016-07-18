@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Investors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @investors.each do |investor| %>
+      <tr>
+        <td><%= investor.name %></td>
+        <td><%= link_to 'Show', investor %></td>
+        <td><%= link_to 'Edit', edit_investor_path(investor) %></td>
+        <td><%= link_to 'Destroy', investor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Investor', new_investor_path %>

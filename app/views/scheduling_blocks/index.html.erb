@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Scheduling Blocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start time</th>
+      <th>Bookable</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scheduling_blocks.each do |scheduling_block| %>
+      <tr>
+        <td><%= scheduling_block.start_time %></td>
+        <td><%= scheduling_block.bookable %></td>
+        <td><%= link_to 'Show', scheduling_block %></td>
+        <td><%= link_to 'Edit', edit_scheduling_block_path(scheduling_block) %></td>
+        <td><%= link_to 'Destroy', scheduling_block, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scheduling block', new_scheduling_block_path %>

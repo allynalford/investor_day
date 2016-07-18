@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @scheduling_block.start_time %>
+</p>
+
+<p>
+  <strong>Bookable:</strong>
+  <%= @scheduling_block.bookable %>
+</p>
+
+<%= link_to 'Edit', edit_scheduling_block_path(@scheduling_block) %> |
+<%= link_to 'Back', scheduling_blocks_path %>

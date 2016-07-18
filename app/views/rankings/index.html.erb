@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Rankings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rankee</th>
+      <th>Ranker</th>
+      <th>Score</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rankings.each do |ranking| %>
+      <tr>
+        <td><%= ranking.rankee %></td>
+        <td><%= ranking.ranker %></td>
+        <td><%= ranking.score %></td>
+        <td><%= link_to 'Show', ranking %></td>
+        <td><%= link_to 'Edit', edit_ranking_path(ranking) %></td>
+        <td><%= link_to 'Destroy', ranking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ranking', new_ranking_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rankee_id: 
+  rankee_type: Rankee
+  ranker_id: 
+  ranker_type: Ranker
+  score: 1
+
+two:
+  rankee_id: 
+  rankee_type: Rankee
+  ranker_id: 
+  ranker_type: Ranker
+  score: 1

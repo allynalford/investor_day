@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scheduling_block_id: 
+  company_id: 
+  investor_id: 
+
+two:
+  scheduling_block_id: 
+  company_id: 
+  investor_id: 
