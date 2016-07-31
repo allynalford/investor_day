@@ -22,6 +22,13 @@ class Ranking < ActiveRecord::Base
   belongs_to :ranker, polymorphic: true
 
   scope :ordered, -> { order(score: :desc) }
+  scope :unmatched, -> (inv)  do
+    where(
+      rankee: Company.where.not(
+        id: Match.where(investor: inv).pluck(:company_id)
+      )
+    ) 
+  end
 
   def self.generate_matches
     investors = Investor.all
@@ -45,5 +52,12 @@ class Ranking < ActiveRecord::Base
         m.save
       end
     end
+  end
+
+  def self.generate_stable_pairings
+    blocks = SchedulingBlock.where(bookable: true)
+    blocks.each do |time_slot|
+      time_slot.generate_match
+    end    
   end
 end
